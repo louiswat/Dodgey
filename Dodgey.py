@@ -136,7 +136,7 @@ class Dodgey:
 
     def __init__(self):
         self._init_pygame()
-        self.screen = pygame.display.set_mode((1680, 1050))
+        self.screen = pygame.display.set_mode((1680, 1050), pygame.FULLSCREEN)
         self.background = load_sprite("Back", False)
         self.clock = pygame.time.Clock()
         self.score = 0
