@@ -26,11 +26,6 @@ def get_random_velocity(min_speed, max_speed):
     return Vector2(speed, 0).rotate(angle)
 
 
-def load_sound(name):
-    path = f"./Assets/Sound/{name}.wav"
-    return Sound(path)
-
-
 def load_sprite(name, with_alpha=True):
     path = f"Assets/Sprites/{name}.png"
     loaded_sprite = load(path)
@@ -113,8 +108,6 @@ class Spaceship(GameObject):
     def __init__(self, position, create_bullet_callback):
         self.create_bullet_callback = create_bullet_callback
 
-        self.explosion = load_sound("explosion")
-        self.laser_sound = load_sound("laser")
         self.direction = Vector2(SpaceshipUp)
         super().__init__(position, load_sprite("Spaceship"), Vector2(0))
 
