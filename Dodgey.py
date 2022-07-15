@@ -130,7 +130,6 @@ class Spaceship(GameObject):
         bullet_velocity = self.direction * self.BULLET_SPEED + self.velocity
         bullet = Bullet(self.position, bullet_velocity)
         self.create_bullet_callback(bullet)
-        self.laser_sound.play()
 
 class Dodgey:
     MIN_DISTANCE = 300
@@ -222,7 +221,6 @@ class Dodgey:
             for asteroid in self.asteroids:
                 if asteroid.collides_with(self.spaceship):
                     self.message = "You died, game will close shortly"
-                    self.spaceship.explosion.play()
                     self.spaceship = None
                     break
         for bullet in self.bullets[:]:
